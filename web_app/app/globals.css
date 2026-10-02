@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-lexend), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-lexend: var(--font-lexend), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-jungle-teal: #32866D;
+  --color-jungle-teal-hover: #286F5A;
+  --color-jungle-teal-light: #EBF5F1;
+  --color-jungle-teal-muted: rgba(50, 134, 109, 0.15);
+
+  --color-cinnamon-wood: #B85C3A;
+  --color-cinnamon-wood-hover: #9E4E30;
+  --color-cinnamon-wood-light: #FBF0EC;
+  --color-cinnamon-wood-muted: rgba(184, 92, 58, 0.15);
+
+  --color-evergreen: #0D2923;
+  --color-evergreen-hover: #071714;
+  --color-evergreen-light: #183C34;
+  
+  --color-soft-linen: #F5F0E6;
+  --color-soft-linen-dark: #EAE4D7;
+
+  --color-carbon-black: #202421;
+  --color-carbon-muted: rgba(32, 36, 33, 0.65);
+  --color-carbon-faint: rgba(32, 36, 33, 0.40);
+
+  --color-botanical-green: #6E9B76;
+  --color-white: #FFFFFF;
+
+  --color-border-subtle: rgba(32, 36, 33, 0.10);
+  --color-border-strong: rgba(32, 36, 33, 0.18);
+}
+
+:root {
+  --jungle-teal: #32866D;
+  --cinnamon-wood: #B85C3A;
+  --evergreen: #0D2923;
+  --soft-linen: #F5F0E6;
+  --white: #FFFFFF;
+  --carbon-black: #202421;
+  --botanical-green: #6E9B76;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAFAFA;
+  color: #202421;
+  font-family: var(--font-lexend), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(32, 36, 33, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(32, 36, 33, 0.3);
+}
+
+/* Print Styles for Invoice */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invoice, #printable-invoice * {
+    visibility: visible;
+  }
+  #printable-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
